@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    name: Testing application for NodeJS ${{ matrix.node }}
+    name: NodeJS ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
