@@ -4,13 +4,10 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
 
 jobs:
   test:
-    name: Testing on node ${{ matrix.node }}
+    name: Testing application for NodeJS ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
