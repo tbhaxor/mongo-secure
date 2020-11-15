@@ -106,3 +106,12 @@ For more information read the [Contributing Guidelines](https://github.com/tbhax
 **@tbhaxor/mongo-secure** is licensed under [MIT License](https://github.com/tbhaxor/mongo-secure/blob/main/LICENSE)
 
 ## Contact the Author
+
+Follow the links to reach me
+
+- Email: tbhaxor@gmail.com
+- Twitter: [@tbhaxor](https://twitter.com/tbhaxor)
+- Facebook: [@tbhaxor](https://fb.com/tbhaxor)
+- GitHub: [@tbhaxor](https://github.com/tbhaxor)
+- LinkedIn: [@gurkirat--singh](https://www.linkedin.com/in/gurkirat--singh)
+- Instagram: [@_tbhaxor_](https://instagram.com/_tbhaxor_)
