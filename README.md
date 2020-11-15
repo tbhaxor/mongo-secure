@@ -4,8 +4,6 @@ MongoSecure is a nodejs module as an express.js middleware to prevent potential 
 
 I would like to thank [x00](https://stackoverflow.com/users/12610347/x00) who gave me headstart to fix this issue and create a middleware for you. [Originally asked question on stackoverflow](https://stackoverflow.com/questions/59394484/expressjs-set-the-depth-of-json-parsing)
 
-Build Status
-
 ## Why you need this
 
 I have posted a complete article on dev.to about this showing how the application can be targeted and exploited against NoSQL Injection payloads.
