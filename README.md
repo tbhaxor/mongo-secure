@@ -16,7 +16,7 @@ Another reasons are as follows
 2. Minimize the time to validate data and report it tainted
 3. Slimline and fast
 4. No additional skill/library required
-5. Does not change orignal value of `req.body`. [SEE THIS](#usage)
+5. Does not change original value of `req.body`. [SEE THIS](#usage)
 
 ## Requirements
 
@@ -78,7 +78,17 @@ It is numerical field, that accept a number starting from `1`. It is basically t
 
 It is a string feild that accepts any string, no contraint here. When the nested object hit the target [`maxNestedLimit`](#maxnestedlimit), this text will be replaced with the object
 
-For example, is `maxNestedLimit` is `1` and **replaceWith** is `Unprotected`
+For example, is **maxNestedLimit** is `1` and **replaceWith** is `Unprotected` then,
+
+```json
+{ "name": "Gurkirat", "username": "tbhaxor", "address": { "country": "India", "location": "New Delhi" } }
+```
+
+would be converted as
+
+```json
+{ "name": "Gurkirat", "username": "tbhaxor", "address": "Unprotected" }
+```
 
 ## Development
 
