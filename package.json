@@ -1,6 +1,6 @@
 {
   "name": "@tbhaxor/mongo-secure",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Slimline expressjs middleware to secure potential nosql injection in mongodb explaination",
   "main": "index.js",
   "repository": "https://github.com/tbhaxor/mongo-secure",
