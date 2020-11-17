@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
+import './custom-types/express/index'
 interface Options {
   replaceWith: string
   maxNestingLevel: number
