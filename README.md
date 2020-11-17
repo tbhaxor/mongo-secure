@@ -1,5 +1,9 @@
 # mongo-secure ![Pre-merge Testing](https://github.com/tbhaxor/mongo-secure/workflows/Pre-merge%20Testing/badge.svg)
 
+<p style="text-align: center">
+  <img src="https://i.ibb.co/HdV3SLS/image.png" alt="image" border="0">
+</p>
+
 MongoSecure is a nodejs module as an express.js middleware to prevent potential NoSQL Injection flaws that might allow hackers exploit the application and do unauthorized activities
 
 I would like to thank [x00](https://stackoverflow.com/users/12610347/x00) who gave me headstart to fix this issue and create a middleware for you. [Originally asked question on stackoverflow](https://stackoverflow.com/questions/59394484/expressjs-set-the-depth-of-json-parsing)
@@ -12,7 +16,7 @@ You can find my article posted here: https://dev.to/tbhaxor/one-step-to-prevent-
 
 Another reasons are as follows
 
-1. Fix the above mentioned vulnerability without
+1. Fix the above mentioned vulnerability without any complexity
 2. Minimize the time to validate data and report it tainted
 3. Slimline and fast
 4. No additional skill/library required
@@ -49,7 +53,7 @@ import express from 'express'
 
 // commonjs
 const express = require('express')
-const mongoSecure = require('@tbhaxor/mongo-secure')
+const mongoSecure = require('@tbhaxor/mongo-secure').default
 
 const app = express()
 
@@ -89,6 +93,16 @@ would be converted as
 ```json
 { "name": "Gurkirat", "username": "tbhaxor", "address": "Unprotected" }
 ```
+
+## Using other tech stacks
+
+You can use mongo secure with other nodejs projects also. This module doesn't limits you to use expressjs.
+
+To leverage this module in other platform you can use this example
+
+<p style="text-align: center">
+  <img src="https://i.ibb.co/SnDXgY3/image.png" />
+</p>
 
 ## Development
 
