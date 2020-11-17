@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/tbhaxor/mongo-secure",
   "author": "Gurkirat Singh <tbhaxor@gmail.com>",
+  "homepage": "https://mongo-secure.tbhaxor.com/",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf index.js",
