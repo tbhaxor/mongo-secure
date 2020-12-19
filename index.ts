@@ -10,12 +10,12 @@ interface Options {
   /**
    * @deprecated Use `limit` instead
    */
-  maxNestingLevel: number
+  maxNestingLevel?: number
 
   /**
-   * Max number of nesting to pass
+   * Max number of nesting to pass (default: 1)
    */
-  limit: number
+  limit?: number
 }
 
 /**
@@ -25,7 +25,7 @@ interface Options {
  */
 export function serializer(payload: any, cdepth: number, options: Options): void {
   const main: any = {}
-  options.limit = options.limit || options.maxNestingLevel
+  options.limit = options.limit || options.maxNestingLevel || 1
   const maxDepth = typeof options.limit == 'number' ? (options.limit == 0 ? 1 : options.limit) : 1
 
   for (const key in payload) {

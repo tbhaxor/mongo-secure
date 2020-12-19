@@ -8,7 +8,7 @@ exports.serializer = void 0;
  */
 function serializer(payload, cdepth, options) {
     var main = {};
-    options.limit = options.limit || options.maxNestingLevel;
+    options.limit = options.limit || options.maxNestingLevel || 1;
     var maxDepth = typeof options.limit == 'number' ? (options.limit == 0 ? 1 : options.limit) : 1;
     for (var key in payload) {
         // check for object

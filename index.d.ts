@@ -8,11 +8,11 @@ interface Options {
   /**
    * @deprecated Use `limit` instead
    */
-  maxNestingLevel: number
+  maxNestingLevel?: number
   /**
-   * Max number of nesting to pass
+   * Max number of nesting to pass (default: 1)
    */
-  limit: number
+  limit?: number
 }
 /**
  * @param payload The payload to serialize (in case of express it is `req.body`)
