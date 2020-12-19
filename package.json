@@ -1,7 +1,7 @@
 {
   "name": "@tbhaxor/mongo-secure",
-  "version": "1.0.1",
-  "description": "Slimline expressjs middleware to secure potential nosql injection in mongodb explaination",
+  "version": "1.0.2",
+  "description": "Slimline expressjs middleware to secure potential nosql injection in mongodb application",
   "main": "index.js",
   "repository": "https://github.com/tbhaxor/mongo-secure",
   "author": "Gurkirat Singh <tbhaxor@gmail.com>",
@@ -14,7 +14,6 @@
     "format": "prettier -w index.ts index.d.ts",
     "test": "mocha -r 'ts-node/register' test/*.spec.ts"
   },
-  "types": "./index.d.ts",
   "keywords": [
     "nosql injection",
     "express",
