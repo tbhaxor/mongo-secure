@@ -23,7 +23,5 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Installing dependencies
         run: sudo npm i -g yarn && yarn
-      - name: Building
-        run: yarn build
       - run: yarn test
         name: 'Testing'
