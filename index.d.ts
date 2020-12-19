@@ -1,8 +1,18 @@
 import './custom-types/express/index'
 import { RequestHandler } from 'express'
 interface Options {
+  /**
+   * The string you want replace nested object with
+   */
   replaceWith: string
+  /**
+   * @deprecated Use `limit` instead
+   */
   maxNestingLevel: number
+  /**
+   * Max number of nesting to pass
+   */
+  limit: number
 }
 /**
  * @param payload The payload to serialize (in case of express it is `req.body`)

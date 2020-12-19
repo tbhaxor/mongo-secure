@@ -8,7 +8,8 @@ exports.serializer = void 0;
  */
 function serializer(payload, cdepth, options) {
     var main = {};
-    var maxDepth = typeof options.maxNestingLevel == 'number' ? (options.maxNestingLevel == 0 ? 1 : options.maxNestingLevel) : 1;
+    options.limit = options.limit || options.maxNestingLevel;
+    var maxDepth = typeof options.limit == 'number' ? (options.limit == 0 ? 1 : options.limit) : 1;
     for (var key in payload) {
         // check for object
         if (payload[key] instanceof Object) {

@@ -7,7 +7,6 @@
   "author": "Gurkirat Singh <tbhaxor@gmail.com>",
   "homepage": "https://mongo-secure.tbhaxor.com/",
   "license": "MIT",
-  "type": "module",
   "types": "./index.d.ts",
   "scripts": {
     "clean": "rimraf *.js *.map *.d.ta",
