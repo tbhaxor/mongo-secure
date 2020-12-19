@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from 'express'
-import './custom-types/express/index'
+// **
+import { RequestHandler } from 'express'
 
 interface Options {
   // the string you want replace nested object with
@@ -41,7 +41,7 @@ export { Options }
  * Middleware to be used in express for preventing nosql-injection
  * @param options Serialization options
  */
-export default function (options: Options): (req: Request, res: Response, next: NextFunction) => any {
+export default function (options: Options): RequestHandler {
   return (req, _res, next) => {
     // running the serializer
     req.protectedBody = serializer(req.body, 1, options)

@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from 'express'
 import './custom-types/express/index'
+import { RequestHandler } from 'express'
 interface Options {
   replaceWith: string
   maxNestingLevel: number
@@ -15,4 +15,5 @@ export { Options }
  * Middleware to be used in express for preventing nosql-injection
  * @param options Serialization options
  */
-export default function (options: Options): (req: Request, res: Response, next: NextFunction) => any
+export default function (options: Options): RequestHandler
+//# sourceMappingURL=index.d.ts.map

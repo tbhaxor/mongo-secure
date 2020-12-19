@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.serializer = void 0;
-require("./custom-types/express/index");
 /**
  * @param payload The payload to serialize (in case of express it is `req.body`)
  * @param cdepth Current depth of object, if **`cdepth == options.maxNestingLevel`** then replace the entire value with `options.replaceWith`
@@ -42,3 +41,4 @@ function default_1(options) {
     };
 }
 exports.default = default_1;
+//# sourceMappingURL=index.js.map
