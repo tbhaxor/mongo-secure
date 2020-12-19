@@ -13,7 +13,7 @@
     "build": "yarn clean && tsc --build tsconfig.json && yarn lint && prepend index.d.ts \"import './custom-types/express/index';\n\" && yarn format",
     "lint": "eslint index.ts index.d.ts --fix",
     "format": "prettier -w index.ts index.d.ts",
-    "test": "mocha -r 'ts-node/register' test/*.spec.ts"
+    "test": "mocha test/*.spec.js"
   },
   "keywords": [
     "nosql injection",
@@ -35,7 +35,6 @@
     "prepend-file-cli": "^1.0.6",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   }
 }
