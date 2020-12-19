@@ -2,10 +2,20 @@
 import { RequestHandler } from 'express'
 
 interface Options {
-  // the string you want replace nested object with
+  /**
+   * The string you want replace nested object with
+   */
   replaceWith: string
-  // the limit of the nesting to parse (default: 1)
+
+  /**
+   * @deprecated Use `limit` instead
+   */
   maxNestingLevel: number
+
+  /**
+   * Max number of nesting to pass
+   */
+  limit: number
 }
 
 /**
@@ -15,7 +25,8 @@ interface Options {
  */
 export function serializer(payload: any, cdepth: number, options: Options): void {
   const main: any = {}
-  const maxDepth = typeof options.maxNestingLevel == 'number' ? (options.maxNestingLevel == 0 ? 1 : options.maxNestingLevel) : 1
+  options.limit = options.limit || options.maxNestingLevel
+  const maxDepth = typeof options.limit == 'number' ? (options.limit == 0 ? 1 : options.limit) : 1
 
   for (const key in payload) {
     // check for object
