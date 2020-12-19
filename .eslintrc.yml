@@ -28,3 +28,9 @@ rules:
     - off
   '@typescript-eslint/no-explicit-any':
     - off
+overrides:
+  - files:
+      - '**/*.spec.js'
+      - '**/*.spec.jsx'
+    env:
+      mocha: true

@@ -1,8 +1,15 @@
-# mongo-secure ![Pre-merge Testing](https://github.com/tbhaxor/mongo-secure/workflows/Pre-merge%20Testing/badge.svg)
+# MongoSecure ![Pre-merge Testing](https://github.com/tbhaxor/mongo-secure/workflows/Pre-merge%20Testing/badge.svg) ![GitHub](https://img.shields.io/github/license/tbhaxor/mongo-secure) ![](https://img.shields.io/github/languages/code-size/tbhaxor/mongo-secure) ![](https://img.shields.io/npm/dm/@tbhaxor/mongo-secure)
 
-<p style="text-align: center">
-  <img src="https://i.ibb.co/HdV3SLS/image.png" alt="image" border="0">
-</p>
+<div style="text-align: center">
+     <img src="https://i.imgur.com/SHnZKzj.png" border=0 width=1200 />
+</div>
+
+<div style="text-align: center">
+    <strong><a href="https://mongo-secure.tbhaxor.com/">Website</a></strong> | <strong><a href="#usage">Usage</a></strong> | <strong><a href="https://www.npmjs.com/package/@tbhaxor/mongo-secure">NPM Repository</a></strong> | <strong><a href="#api">API</a></strong> |  <strong><a href="#development">Contribute to It</a></strong> | <strong><a href="#contact-the-author">Connect with Me</a></strong>
+</div>
+
+<br>
+<br>
 
 MongoSecure is a nodejs module as an express.js middleware to prevent potential NoSQL Injection flaws that might allow hackers exploit the application and do unauthorized activities
 
@@ -58,7 +65,7 @@ const mongoSecure = require('@tbhaxor/mongo-secure').default
 const app = express()
 
 app.use(express.json())
-app.use(mongoSecure({ maxNestedLimit: 2, replaceWith: 'Insecure Property Detected' })) // use it after `express.json` middleware
+app.use(mongoSecure({ limit: 2, replaceWith: 'Insecure Property Detected' })) // use it after `express.json` middleware
 ```
 
 To access the protected body, you can use `req.protectedBody` in the express router
@@ -72,17 +79,21 @@ app.post('/', function (req, res) {
 
 ## API
 
-The function requires two option fields `maxNestedLimit` and `replaceWith`
+The function requires two option fields `limit` and `replaceWith`
 
 ### `maxNestedLimit`
+
+**DEPRECATION!!!** This is deprecated please use [limit](#limit) instead
+
+### `limit`
 
 It is numerical field, that accept a number starting from `1`. It is basically the max number of nesting to be deserialized. Any nested property which is `instanceof Object` after that would be replaced with the [`replaceWith`](#replacewith)
 
 ### `replaceWith`
 
-It is a string feild that accepts any string, no contraint here. When the nested object hit the target [`maxNestedLimit`](#maxnestedlimit), this text will be replaced with the object
+It is a string feild that accepts any string, no contraint here. When the nested object hit the target [`limit`](#limit), this text will be replaced with the object
 
-For example, is **maxNestedLimit** is `1` and **replaceWith** is `Unprotected` then,
+For example, is **limit** is `1` and **replaceWith** is `Unprotected` then,
 
 ```json
 { "name": "Gurkirat", "username": "tbhaxor", "address": { "country": "India", "location": "New Delhi" } }
@@ -100,9 +111,9 @@ You can use mongo secure with other nodejs projects also. This module doesn't li
 
 To leverage this module in other platform you can use this example
 
-<p style="text-align: center">
-  <img src="https://i.ibb.co/SnDXgY3/image.png" />
-</p>
+<div style="text-align: center">
+<img src="https://i.imgur.com/uJHWEhd.png" border=0 width=800 />
+</div>
 
 ## Development
 

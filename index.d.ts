@@ -1,8 +1,18 @@
-import { NextFunction, Request, Response } from 'express'
 import './custom-types/express/index'
+import { RequestHandler } from 'express'
 interface Options {
+  /**
+   * The string you want replace nested object with
+   */
   replaceWith: string
-  maxNestingLevel: number
+  /**
+   * @deprecated Use `limit` instead
+   */
+  maxNestingLevel?: number
+  /**
+   * Max number of nesting to pass (default: 1)
+   */
+  limit?: number
 }
 /**
  * @param payload The payload to serialize (in case of express it is `req.body`)
@@ -15,4 +25,5 @@ export { Options }
  * Middleware to be used in express for preventing nosql-injection
  * @param options Serialization options
  */
-export default function (options: Options): (req: Request, res: Response, next: NextFunction) => any
+export default function (options: Options): RequestHandler
+//# sourceMappingURL=index.d.ts.map

@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.serializer = void 0;
-require("./custom-types/express/index");
 /**
  * @param payload The payload to serialize (in case of express it is `req.body`)
  * @param cdepth Current depth of object, if **`cdepth == options.maxNestingLevel`** then replace the entire value with `options.replaceWith`
@@ -9,7 +8,8 @@ require("./custom-types/express/index");
  */
 function serializer(payload, cdepth, options) {
     var main = {};
-    var maxDepth = typeof options.maxNestingLevel == 'number' ? (options.maxNestingLevel == 0 ? 1 : options.maxNestingLevel) : 1;
+    options.limit = options.limit || options.maxNestingLevel || 1;
+    var maxDepth = typeof options.limit == 'number' ? (options.limit == 0 ? 1 : options.limit) : 1;
     for (var key in payload) {
         // check for object
         if (payload[key] instanceof Object) {
@@ -42,3 +42,4 @@ function default_1(options) {
     };
 }
 exports.default = default_1;
+//# sourceMappingURL=index.js.map

@@ -1,11 +1,21 @@
-import { NextFunction, Request, Response } from 'express'
-import './custom-types/express/index'
+// **
+import { RequestHandler } from 'express'
 
 interface Options {
-  // the string you want replace nested object with
+  /**
+   * The string you want replace nested object with
+   */
   replaceWith: string
-  // the limit of the nesting to parse (default: 1)
-  maxNestingLevel: number
+
+  /**
+   * @deprecated Use `limit` instead
+   */
+  maxNestingLevel?: number
+
+  /**
+   * Max number of nesting to pass (default: 1)
+   */
+  limit?: number
 }
 
 /**
@@ -15,7 +25,8 @@ interface Options {
  */
 export function serializer(payload: any, cdepth: number, options: Options): void {
   const main: any = {}
-  const maxDepth = typeof options.maxNestingLevel == 'number' ? (options.maxNestingLevel == 0 ? 1 : options.maxNestingLevel) : 1
+  options.limit = options.limit || options.maxNestingLevel || 1
+  const maxDepth = typeof options.limit == 'number' ? (options.limit == 0 ? 1 : options.limit) : 1
 
   for (const key in payload) {
     // check for object
@@ -41,7 +52,7 @@ export { Options }
  * Middleware to be used in express for preventing nosql-injection
  * @param options Serialization options
  */
-export default function (options: Options): (req: Request, res: Response, next: NextFunction) => any {
+export default function (options: Options): RequestHandler {
   return (req, _res, next) => {
     // running the serializer
     req.protectedBody = serializer(req.body, 1, options)
